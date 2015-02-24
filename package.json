@@ -1,0 +1,15 @@
+{
+  "name": "shonkwrap",
+  "version": "1.0.0",
+  "description": "npm shrinkwrap without the noise",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:skybet/shonkwrap.git"
+  },
+  "bin": "./shonkwrap",
+  "keywords": [
+    "shinkwrap"
+  ],
+  "author": "SkyBet",
+  "license": " BSD-3-Clause"
+}

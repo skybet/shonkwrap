@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+npm shrinkwrap
+echo '''
+var fs = require("fs");
+var shrinkwrap = require("./npm-shrinkwrap.json");
+
+function replacer(key, val) {
+    if ((key === "resolved" || key === "from") && this.version) {
+        return undefined;
+    } else {
+        return val;
+    }
+}
+
+fs.writeFileSync("./npm-shrinkwrap.json", JSON.stringify(shrinkwrap, replacer, 2));
+''' | node
