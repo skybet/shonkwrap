@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-npm shrinkwrap
+npm shrinkwrap $*
 echo '''
 var fs = require("fs");
 var shrinkwrap = require("./npm-shrinkwrap.json");
