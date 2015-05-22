@@ -6,11 +6,16 @@ var fs = require("fs");
 var shrinkwrap = require("./npm-shrinkwrap.json");
 
 function replacer(key, val) {
-    if ((key === "resolved" || key === "from") && this.version) {
-        return undefined;
-    } else {
+    if (!this.version) {
         return val;
     }
+    if (key === "from") {
+        return undefined;
+    }
+    if (key === "resolved" && !/^git/.test(val)) {
+        return undefined;
+    }
+    return val;
 }
 
 fs.writeFileSync("./npm-shrinkwrap.json", JSON.stringify(shrinkwrap, replacer, 2));
