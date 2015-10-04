@@ -12,7 +12,7 @@ function replacer(key, val) {
     if (key === "from") {
         return undefined;
     }
-    if (key === "resolved" && !/^git/.test(val)) {
+    if (key === "resolved" && !/^git/.test(val) && this.from !== val) {
         return undefined;
     }
     return val;

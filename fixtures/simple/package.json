@@ -1,0 +1,8 @@
+{
+  "name": "simple",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "async": "1.4.2"
+  }
+}
