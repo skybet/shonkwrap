@@ -4,6 +4,7 @@
   "dependencies": {
     "async": {
       "version": "1.4.2",
+      "from": "caolan/async#v1.4.2",
       "resolved": "git://github.com/caolan/async.git#92f78aebad222d60c13e4299c0e723f2fe2d6611"
     }
   }
