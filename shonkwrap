@@ -5,14 +5,18 @@ echo '''
 var fs = require("fs");
 var shrinkwrap = require("./npm-shrinkwrap.json");
 
+function gitDep(rep) {
+    return /^git/.test(rep);
+}
+
 function replacer(key, val) {
     if (!this.version) {
         return val;
     }
-    if (key === "from") {
+    if (key === "from" && !gitDep(this.resolved)) {
         return undefined;
     }
-    if (key === "resolved" && !/^git/.test(val) && this.from !== val) {
+    if (key === "resolved" && !gitDep(val) && this.from !== val) {
         return undefined;
     }
     return val;
