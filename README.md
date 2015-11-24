@@ -14,3 +14,9 @@ npm install -g shonkwrap
 # Usage
 
 When you'd normally type `npm shinkwrap`, type `shonkwrap` instead.
+
+
+
+# Related work
+
+If you're using `npm@2` and having problems, [shrinkwarp](https://github.com/evocateur/shrinkwarp) is a similar project which might help.
