@@ -13,6 +13,9 @@ function replacer(key, val) {
     if (!this.version) {
         return val;
     }
+    if (key === "integrity") {
+      return undefined;
+    }
     if (key === "from" && !gitDep(this.resolved)) {
         return undefined;
     }
